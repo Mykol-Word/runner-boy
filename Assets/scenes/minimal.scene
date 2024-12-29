@@ -21,7 +21,7 @@
       "Flags": 0,
       "Name": "Sun",
       "Rotation": "-0.0729315,0.4822396,0.1305433,0.8631827",
-      "Tags": "light_directional,light",
+      "Tags": "light,light_directional",
       "Enabled": true,
       "Components": [
         {
@@ -75,7 +75,8 @@
       "__guid": "6ad70641-3c6c-4402-9c85-9a4969af4764",
       "Flags": 0,
       "Name": "Floor",
-      "Scale": "10,10,5",
+      "Position": "9399.578,0,0",
+      "Scale": "200,10,5",
       "Enabled": true,
       "Components": [
         {
@@ -83,7 +84,7 @@
           "__guid": "0b6a18bf-fdb8-4661-970e-ef635bfa9baa",
           "BodyGroups": 18446744073709551615,
           "CreateAttachments": false,
-          "MaterialOverride": "materials/default.vmat",
+          "MaterialOverride": "materials/road.vmat",
           "Model": "models/dev/plane.vmdl",
           "RenderOptions": {
             "GameLayer": true,
@@ -92,7 +93,7 @@
             "AfterUILayer": false
           },
           "RenderType": "On",
-          "Tint": "0.39546,0.51163,0.27128,1"
+          "Tint": "797.62,797.62,797.62,1"
         },
         {
           "__type": "Sandbox.BoxCollider",
@@ -126,16 +127,17 @@
       ]
     },
     {
-      "__guid": "5a751e28-7145-444f-86e0-319dc0352fb0",
+      "__guid": "8b4f2ae9-9078-4256-8dc4-6a49bc07c339",
       "Flags": 0,
-      "Name": "Camera",
-      "Position": "-576,0,108.0375",
+      "Name": "Camera (1)",
+      "Position": "-214.7296,0,356.9866",
+      "Rotation": "0,0.2975743,0,0.9546987",
       "Tags": "maincamera",
       "Enabled": true,
       "Components": [
         {
           "__type": "Sandbox.CameraComponent",
-          "__guid": "df6217ed-df65-487a-a8f8-f7ad88665d55",
+          "__guid": "a6544de6-cf04-49b0-86e1-90b05658b1e6",
           "BackgroundColor": "0.33333,0.46275,0.52157,1",
           "ClearFlags": "All",
           "FieldOfView": 90,
@@ -149,6 +151,54 @@
           "Viewport": "0,0,1,1",
           "ZFar": 10000,
           "ZNear": 10
+        },
+        {
+          "__type": "Sandbox.Bloom",
+          "__guid": "bc0b3b30-8a17-4f19-88c5-0389b5b5c0e9",
+          "BloomColor": {
+            "blend": "Linear",
+            "color": [
+              {
+                "t": 0,
+                "c": "1,1,1,1"
+              },
+              {
+                "t": 1,
+                "c": "1,1,1,1"
+              }
+            ],
+            "alpha": null
+          },
+          "BloomCurve": [
+            {
+              "x": 0,
+              "y": 0.5,
+              "in": 0,
+              "out": 0,
+              "mode": "Mirrored"
+            },
+            {
+              "x": 1,
+              "y": 1,
+              "in": 0,
+              "out": 0,
+              "mode": "Mirrored"
+            }
+          ],
+          "Mode": "Additive",
+          "Strength": 1,
+          "Threshold": 0.5,
+          "ThresholdWidth": 0
+        },
+        {
+          "__type": "Sandbox.DepthOfField",
+          "__guid": "502d7f82-45dd-4d65-b4a3-f0d038f25a12",
+          "BackBlur": true,
+          "BlurSize": 4.11,
+          "FocalDistance": 743.93,
+          "FocusRange": 439.87,
+          "FrontBlur": false,
+          "QualityLevel": "High"
         }
       ]
     },
@@ -165,7 +215,7 @@
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {
-            "X": true,
+            "X": false,
             "Y": false,
             "Z": false,
             "Pitch": true,
@@ -191,7 +241,9 @@
         {
           "__type": "Controller",
           "__guid": "f1766a28-f431-41d1-bbf0-9ba81ddfee23",
-          "jump_force": 100,
+          "footstep": "sounds/footsteps/footstep-concrete.sound",
+          "footstep_volume": 0.5,
+          "jump_force": 95,
           "model_renderer": {
             "_type": "component",
             "component_id": "9bc6ac00-f355-4bc4-8880-91c5373dec17",
@@ -199,6 +251,12 @@
             "component_type": "SkinnedModelRenderer"
           },
           "move_speed": 245,
+          "ragdoll": {
+            "_type": "component",
+            "component_id": "8950c120-8ca8-465a-a29b-20c48f09be2b",
+            "go": "c0ed9a68-0359-478d-9f52-d3ae1584774a",
+            "component_type": "Prop"
+          },
           "rigidbody": {
             "_type": "component",
             "component_id": "554535c6-93c6-4e18-9913-b8af42fc3263",
@@ -220,14 +278,23 @@
               "BodyGroups": 341,
               "CreateAttachments": false,
               "CreateBoneObjects": false,
+              "MaterialGroup": "default",
               "Model": "models/citizen/citizen.vmdl",
-              "Morphs": {},
+              "Morphs": {
+                "eyelidbulgelower": 0
+              },
               "Parameters": {
                 "bools": {
-                  "b_grounded": true
+                  "b_grounded": true,
+                  "ik.hand_right.enabled": false
                 },
-                "ints": {},
-                "floats": {},
+                "ints": {
+                  "face_override": 0
+                },
+                "floats": {
+                  "move_groundspeed": 0,
+                  "move_rotationspeed": 0
+                },
                 "vectors": {},
                 "rotations": {}
               },
@@ -239,12 +306,80 @@
               },
               "RenderType": "On",
               "Sequence": {
-                "Name": "Sprint_N"
+                "Name": "AvatarMenu_Idle_02"
               },
               "Tint": "1,1,1,1",
               "UseAnimGraph": true
             }
           ]
+        },
+        {
+          "__guid": "c0ed9a68-0359-478d-9f52-d3ae1584774a",
+          "Flags": 0,
+          "Name": "Ragdoll",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.Prop",
+              "__guid": "8950c120-8ca8-465a-a29b-20c48f09be2b",
+              "__enabled": false,
+              "BodyGroups": 341,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/citizen/citizen.vmdl",
+              "StartAsleep": false,
+              "Tint": "1,1,1,1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "c33aa30c-7a78-447c-a662-bab62a229aa7",
+      "Flags": 0,
+      "Name": "Obstacle Manager",
+      "Position": "355.1961,15.5158,-17.52035",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ObstacleManager",
+          "__guid": "eab76ed4-aec7-4e54-935f-d4fef3d500d0",
+          "obstacle_list": [
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/box_p.prefab"
+            }
+          ],
+          "obstacle_speed": 0,
+          "spawn_delay_max": 2,
+          "spawn_delay_min": 0.1,
+          "spawn_range": 400
+        }
+      ]
+    },
+    {
+      "__guid": "dcd55429-e4fc-4bd5-ad5f-09d49993c905",
+      "Flags": 0,
+      "Name": "Desert",
+      "Position": "0,0,-8.646989",
+      "Scale": "1000,1000,1000",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "f7d96b4f-4119-4b7a-ae22-274a7379ef6a",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialOverride": "materials/terrain/sand/terrain_sand.vmat",
+          "Model": "models/dev/plane.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
         }
       ]
     }
@@ -277,6 +412,9 @@
   "ResourceVersion": 2,
   "Title": "minimal",
   "Description": null,
-  "__references": [],
+  "__references": [
+    "duccsoft.forest_needles_tmat#60685",
+    "rustextended.terrain_sand#43377"
+  ],
   "__version": 2
 }

@@ -1,0 +1,106 @@
+{
+  "RootObject": {
+    "__guid": "a609e73a-135f-4a84-9ea9-f03a9e77458c",
+    "Flags": 0,
+    "Name": "Box",
+    "Position": "355.1961,109.9891,-17.52035",
+    "Scale": "2,2,2",
+    "Tags": "obstacle",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Sandbox.Rigidbody",
+        "__guid": "fab495b3-2b42-47cc-9ac0-2ef174f0ecfa",
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {
+          "X": false,
+          "Y": false,
+          "Z": false,
+          "Pitch": true,
+          "Yaw": true,
+          "Roll": true
+        },
+        "MassCenterOverride": "0,0,0",
+        "MassOverride": 0,
+        "MotionEnabled": true,
+        "OverrideMassCenter": false,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "d83df97d-e9af-4c41-8553-214d62466d09",
+        "Center": "-0.9,0,19.69998",
+        "IsTrigger": false,
+        "Scale": "32.90001,33.4001,36",
+        "Static": false,
+        "SurfaceVelocity": "0,0,0"
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "cab20277-e83d-4f6a-9760-0d9e73983de2",
+        "Center": "-12.2,-0.1999988,20.20001",
+        "IsTrigger": true,
+        "Scale": "15.90002,27.90001,38",
+        "Static": false,
+        "SurfaceVelocity": "0,0,0"
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "f3067ca4-2f77-4555-bbda-b082cf57e174",
+        "Center": "0,0,37.89998",
+        "IsTrigger": true,
+        "Scale": "32.99998,23.80003,-7.099977",
+        "Static": false,
+        "SurfaceVelocity": "0,0,0"
+      },
+      {
+        "__type": "Obstacle",
+        "__guid": "e555b355-1ebf-4ae2-be96-3f6da7007bac",
+        "rigidbody": {
+          "_type": "component",
+          "component_id": "fab495b3-2b42-47cc-9ac0-2ef174f0ecfa",
+          "go": "a609e73a-135f-4a84-9ea9-f03a9e77458c",
+          "component_type": "Rigidbody"
+        },
+        "speed": 870
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "08956aae-4420-4a0d-b3e3-b3f7918244a4",
+        "Flags": 0,
+        "Name": "Model",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "6c9ec3c7-e648-41ed-a719-633680e43ad5",
+            "BodyGroups": 18446744073709551615,
+            "CreateAttachments": false,
+            "Model": "models/citizen_props/crate01.vmdl",
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "ResourceVersion": 1,
+  "__references": [
+    "garry.crate#10652"
+  ],
+  "__version": 1
+}
