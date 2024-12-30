@@ -10,6 +10,7 @@
         {
           "__type": "Sandbox.SceneInformation",
           "__guid": "a8e4224c-1a83-4260-8fbd-b0eb2f6d385c",
+          "Changes": "",
           "Description": "",
           "SceneTags": "",
           "Title": "minimal"
@@ -20,8 +21,9 @@
       "__guid": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
       "Flags": 0,
       "Name": "Sun",
+      "Position": "0,0,1190.439",
       "Rotation": "-0.0729315,0.4822396,0.1305433,0.8631827",
-      "Tags": "light,light_directional",
+      "Tags": "light_directional,light",
       "Enabled": true,
       "Components": [
         {
@@ -29,9 +31,9 @@
           "__guid": "d3659344-a90d-48fa-927a-095f70fe041f",
           "FogMode": "Enabled",
           "FogStrength": 1,
-          "LightColor": "0.94419,0.97767,1,1",
+          "LightColor": "0.86512,0.81958,0.47481,1",
           "Shadows": true,
-          "SkyColor": "0.2532,0.32006,0.35349,1"
+          "SkyColor": "0.6,0.6,0.6,1"
         }
       ]
     },
@@ -57,7 +59,7 @@
             "Maxs": "512,512,512"
           },
           "DelayBetweenUpdates": 0.1,
-          "Feathering": 0.02,
+          "Feathering": 32,
           "FrameInterval": 5,
           "MaxDistance": 512,
           "MultiBounce": false,
@@ -72,66 +74,11 @@
       ]
     },
     {
-      "__guid": "6ad70641-3c6c-4402-9c85-9a4969af4764",
-      "Flags": 0,
-      "Name": "Floor",
-      "Position": "9399.578,0,0",
-      "Scale": "200,10,5",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "0b6a18bf-fdb8-4661-970e-ef635bfa9baa",
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "MaterialOverride": "materials/road.vmat",
-          "Model": "models/dev/plane.vmdl",
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "797.62,797.62,797.62,1"
-        },
-        {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "0715cb55-1733-4f5e-8560-c288b8695631",
-          "Center": "0,0,-5",
-          "IsTrigger": false,
-          "Scale": "100,100,10",
-          "Static": false,
-          "SurfaceVelocity": "0,0,0"
-        }
-      ],
-      "Children": [
-        {
-          "__guid": "695cb118-4089-44a9-abb6-ecc9ca1e005b",
-          "Flags": 0,
-          "Name": "Floor_Buffer",
-          "Scale": "3,3,0.05",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.BoxCollider",
-              "__guid": "9515c7a8-ea82-403d-8e2b-97c3bef548dc",
-              "Center": "0,0,7.370193",
-              "IsTrigger": true,
-              "Scale": "32,32,39.79998",
-              "Static": false,
-              "SurfaceVelocity": "0,0,0"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "__guid": "8b4f2ae9-9078-4256-8dc4-6a49bc07c339",
       "Flags": 0,
-      "Name": "Camera (1)",
-      "Position": "-214.7296,0,356.9866",
-      "Rotation": "0,0.2975743,0,0.9546987",
+      "Name": "Camera",
+      "Position": "-1.449,0,324.08",
+      "Rotation": "0,0.2458282,0,0.9693134",
       "Tags": "maincamera",
       "Enabled": true,
       "Components": [
@@ -153,50 +100,12 @@
           "ZNear": 10
         },
         {
-          "__type": "Sandbox.Bloom",
-          "__guid": "bc0b3b30-8a17-4f19-88c5-0389b5b5c0e9",
-          "BloomColor": {
-            "blend": "Linear",
-            "color": [
-              {
-                "t": 0,
-                "c": "1,1,1,1"
-              },
-              {
-                "t": 1,
-                "c": "1,1,1,1"
-              }
-            ],
-            "alpha": null
-          },
-          "BloomCurve": [
-            {
-              "x": 0,
-              "y": 0.5,
-              "in": 0,
-              "out": 0,
-              "mode": "Mirrored"
-            },
-            {
-              "x": 1,
-              "y": 1,
-              "in": 0,
-              "out": 0,
-              "mode": "Mirrored"
-            }
-          ],
-          "Mode": "Additive",
-          "Strength": 1,
-          "Threshold": 0.5,
-          "ThresholdWidth": 0
-        },
-        {
           "__type": "Sandbox.DepthOfField",
-          "__guid": "502d7f82-45dd-4d65-b4a3-f0d038f25a12",
+          "__guid": "9dc6dca5-f91c-44ae-bfac-907a7f9aaf17",
           "BackBlur": true,
-          "BlurSize": 4.11,
-          "FocalDistance": 743.93,
-          "FocusRange": 439.87,
+          "BlurSize": 50,
+          "FocalDistance": 2000,
+          "FocusRange": 100000,
           "FrontBlur": false,
           "QualityLevel": "High"
         }
@@ -206,6 +115,7 @@
       "__guid": "6783e6f9-15ab-4937-9a90-4970eae23ccb",
       "Flags": 0,
       "Name": "Player",
+      "Position": "300,0,0",
       "Enabled": true,
       "Components": [
         {
@@ -215,7 +125,7 @@
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {
-            "X": false,
+            "X": true,
             "Y": false,
             "Z": false,
             "Pitch": true,
@@ -250,7 +160,7 @@
             "go": "834ffd8e-aa76-448b-8584-d2c90fd1cc50",
             "component_type": "SkinnedModelRenderer"
           },
-          "move_speed": 245,
+          "move_speed": 350,
           "ragdoll": {
             "_type": "component",
             "component_id": "8950c120-8ca8-465a-a29b-20c48f09be2b",
@@ -344,42 +254,262 @@
         {
           "__type": "ObstacleManager",
           "__guid": "eab76ed4-aec7-4e54-935f-d4fef3d500d0",
+          "floor_mover": {
+            "_type": "component",
+            "component_id": "ff0a9120-d743-4946-b9fb-b340344533cc",
+            "go": "a9c7fc85-3713-41a4-ad19-d7f9dcc90d0b",
+            "component_type": "FloorMover"
+          },
+          "game_speed": 1000,
           "obstacle_list": [
             {
               "_type": "gameobject",
               "prefab": "prefabs/box_p.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/barrier_p.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/tanker_p.prefab"
             }
           ],
-          "obstacle_speed": 0,
+          "sign": {
+            "_type": "gameobject",
+            "prefab": "prefabs/sign_p.prefab"
+          },
+          "sign_spawn_time_cutoff": 1,
           "spawn_delay_max": 2,
           "spawn_delay_min": 0.1,
-          "spawn_range": 400
+          "spawn_distance": 8000,
+          "spawn_range": 450,
+          "train_spawn_time_cutoff": 1
         }
       ]
     },
     {
-      "__guid": "dcd55429-e4fc-4bd5-ad5f-09d49993c905",
+      "__guid": "a9c7fc85-3713-41a4-ad19-d7f9dcc90d0b",
       "Flags": 0,
-      "Name": "Desert",
-      "Position": "0,0,-8.646989",
-      "Scale": "1000,1000,1000",
+      "Name": "Moving_Floor",
+      "Position": "10000,0,0",
       "Enabled": true,
       "Components": [
         {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "f7d96b4f-4119-4b7a-ae22-274a7379ef6a",
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "MaterialOverride": "materials/terrain/sand/terrain_sand.vmat",
-          "Model": "models/dev/plane.vmdl",
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
+          "__type": "FloorMover",
+          "__guid": "ff0a9120-d743-4946-b9fb-b340344533cc",
+          "rigidbody": {
+            "_type": "component",
+            "component_id": "4ee3c971-6c67-4a66-8310-efce87006db9",
+            "go": "a9c7fc85-3713-41a4-ad19-d7f9dcc90d0b",
+            "component_type": "Rigidbody"
           },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
+          "speed": 1000
+        },
+        {
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "4ee3c971-6c67-4a66-8310-efce87006db9",
+          "AngularDamping": 0,
+          "Gravity": false,
+          "LinearDamping": 0,
+          "Locking": {
+            "X": false,
+            "Y": false,
+            "Z": false,
+            "Pitch": false,
+            "Yaw": false,
+            "Roll": false
+          },
+          "MassCenterOverride": "0,0,0",
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "OverrideMassCenter": false,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "6ad70641-3c6c-4402-9c85-9a4969af4764",
+          "Flags": 0,
+          "Name": "Floor",
+          "Position": "0,0,1",
+          "Scale": "200,10,5",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "0b6a18bf-fdb8-4661-970e-ef635bfa9baa",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialOverride": "materials/road.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "797.62,797.62,797.62,1"
+            }
+          ]
+        },
+        {
+          "__guid": "dcd55429-e4fc-4bd5-ad5f-09d49993c905",
+          "Flags": 0,
+          "Name": "Desert",
+          "Scale": "200,200,1000",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "f7d96b4f-4119-4b7a-ae22-274a7379ef6a",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialOverride": "materials/sand.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "f3b9d8dd-8793-486a-977d-3f8db97f39c3",
+      "Flags": 0,
+      "Name": "Idle_Floor",
+      "Position": "0,0,-1",
+      "Enabled": true,
+      "Children": [
+        {
+          "__guid": "897d3a2e-7197-4123-bbee-e98515daba53",
+          "Flags": 0,
+          "Name": "Floor",
+          "Position": "0,0,1",
+          "Scale": "200,10,5",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "da2ba8b4-404c-4caa-87f5-4ea7bc2784da",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialOverride": "materials/road.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "797.62,797.62,797.62,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "c0740ea5-24b3-4271-9362-294adf183d19",
+              "Center": "0,0,-5",
+              "IsTrigger": false,
+              "Scale": "100,100,10",
+              "Static": false,
+              "SurfaceVelocity": "0,0,0"
+            }
+          ]
+        },
+        {
+          "__guid": "3e4b11d7-da45-4d27-8667-10444d43bb58",
+          "Flags": 0,
+          "Name": "Floor_Buffer",
+          "Scale": "600,30,0.25",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "fce8e830-57b1-4b14-951e-9a8102319cdf",
+              "Center": "0,0,7.370193",
+              "IsTrigger": true,
+              "Scale": "32,32,39.79998",
+              "Static": false,
+              "SurfaceVelocity": "0,0,0"
+            }
+          ]
+        },
+        {
+          "__guid": "ba550262-ef9a-4513-91da-9f7613531707",
+          "Flags": 0,
+          "Name": "Desert",
+          "Scale": "200,200,1000",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "2a317118-f1ee-40b8-b2c9-ef029f030a5e",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialOverride": "materials/sand.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "60b01d6d-8045-43f5-a0a6-3bc81944d741",
+      "Flags": 0,
+      "Name": "Music",
+      "Position": "0,0,224",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SoundPointComponent",
+          "__guid": "ec4dabef-e311-4c0e-a105-1dd215bce042",
+          "Distance": 1000,
+          "DistanceAttenuation": false,
+          "DistanceAttenuationOverride": true,
+          "Falloff": [
+            {
+              "x": 0.5,
+              "y": 0.5,
+              "in": 0,
+              "out": 0,
+              "mode": "Mirrored"
+            }
+          ],
+          "Force2d": false,
+          "MaxRepeatTime": 1,
+          "MinRepeatTime": 1,
+          "Occlusion": false,
+          "OcclusionOverride": false,
+          "OcclusionRadius": 32,
+          "Pitch": 1,
+          "PlayOnStart": true,
+          "ReflectionOverride": false,
+          "Reflections": false,
+          "Repeat": true,
+          "SoundEvent": "sounds/music/raglessbonelessman_3d.sound",
+          "SoundOverride": true,
+          "StopOnNew": false,
+          "TargetMixer": {
+            "Name": "music",
+            "Id": "cec7b654-7bc7-4087-8870-c293cb08cb16"
+          },
+          "Volume": 0.03
         }
       ]
     }
@@ -413,8 +543,7 @@
   "Title": "minimal",
   "Description": null,
   "__references": [
-    "duccsoft.forest_needles_tmat#60685",
-    "rustextended.terrain_sand#43377"
+    "rlensound.raglessbonelessman_3d#53979"
   ],
   "__version": 2
 }

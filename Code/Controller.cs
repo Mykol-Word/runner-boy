@@ -27,7 +27,7 @@ public sealed class Controller : Component
 	//Component Properties
 	[Property]
 	[Category("Components")]
-	Rigidbody rigidbody;
+	private Rigidbody rigidbody;
 
 	[Property]
 	[Category("Components")]
@@ -57,7 +57,7 @@ public sealed class Controller : Component
 		foreach (Sandbox.Collider c in rigidbody.Touching)
 		{
 			if(c.GameObject.Name == "Floor_Buffer") temp_grounded = true;
-			else if(c.GameObject.Tags.Has("obstacle")) Die();
+			else if(c.GameObject.Tags.Has("obstacle")) { Die(); return; }
 		}
 
 		//Left-Right Movement

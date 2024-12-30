@@ -2,8 +2,7 @@
   "RootObject": {
     "__guid": "a609e73a-135f-4a84-9ea9-f03a9e77458c",
     "Flags": 0,
-    "Name": "Box",
-    "Position": "355.1961,109.9891,-17.52035",
+    "Name": "box_p",
     "Scale": "2,2,2",
     "Tags": "obstacle",
     "Enabled": true,
@@ -65,7 +64,7 @@
           "go": "a609e73a-135f-4a84-9ea9-f03a9e77458c",
           "component_type": "Rigidbody"
         },
-        "speed": 870
+        "speed": 1000
       }
     ],
     "Children": [
@@ -92,15 +91,37 @@
           }
         ]
       }
-    ]
+    ],
+    "__variables": [],
+    "__properties": {
+      "FixedUpdateFrequency": 50,
+      "MaxFixedUpdates": 5,
+      "NetworkFrequency": 30,
+      "NetworkInterpolation": true,
+      "PhysicsSubSteps": 1,
+      "ThreadedAnimation": true,
+      "TimeScale": 1,
+      "UseFixedUpdate": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": true,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": ""
+      }
+    }
   },
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
   "DontBreakAsTemplate": false,
   "ResourceVersion": 1,
-  "__references": [
-    "garry.crate#10652"
-  ],
+  "__references": [],
   "__version": 1
 }

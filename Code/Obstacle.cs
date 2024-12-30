@@ -6,12 +6,12 @@ public sealed class Obstacle : Component
 	public Rigidbody rigidbody;
 
 	[Property]
-	[Range(0, 1000, 5)]
-	public int speed;
+	public int speed = 0;
 
 	protected override void OnUpdate()
 	{
-		rigidbody.Velocity = new Vector3(-speed, rigidbody.Velocity.y , rigidbody.Velocity.z);
+		
+		rigidbody.Velocity = new Vector3(-speed, 0, 0);
 
 		//destroy if out of bounds
 		if(WorldPosition.x < -500) GameObject.Destroy();

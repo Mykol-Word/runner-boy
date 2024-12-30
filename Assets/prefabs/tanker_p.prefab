@@ -1,0 +1,121 @@
+{
+  "RootObject": {
+    "__guid": "b6e006bb-59eb-4fb4-a1f4-4d4d6cbc7870",
+    "Flags": 0,
+    "Name": "tanker_p",
+    "Scale": "1.2,1.2,1.2",
+    "Tags": "obstacle",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Sandbox.Rigidbody",
+        "__guid": "a23ca640-d922-4e33-8895-3c1da02072ee",
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {
+          "X": false,
+          "Y": false,
+          "Z": false,
+          "Pitch": true,
+          "Yaw": true,
+          "Roll": true
+        },
+        "MassCenterOverride": "0,0,0",
+        "MassOverride": 0,
+        "MotionEnabled": true,
+        "OverrideMassCenter": false,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "f755be91-f0ca-4b84-afa4-756489320598",
+        "Center": "0,0,68.80002",
+        "IsTrigger": false,
+        "Scale": "98.40099,389.7003,127.3998",
+        "Static": false,
+        "SurfaceVelocity": "0,0,0"
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "b611e9d7-d17b-4b4c-a6b3-04c1444f4ff8",
+        "Center": "-26.10001,0,61.29992",
+        "IsTrigger": true,
+        "Scale": "69.29999,367.9998,162.4001",
+        "Static": false,
+        "SurfaceVelocity": "0,0,0"
+      },
+      {
+        "__type": "Obstacle",
+        "__guid": "9d3e4d96-3ae9-408b-9c8d-a2826009baa0",
+        "rigidbody": {
+          "_type": "component",
+          "component_id": "a23ca640-d922-4e33-8895-3c1da02072ee",
+          "go": "b6e006bb-59eb-4fb4-a1f4-4d4d6cbc7870",
+          "component_type": "Rigidbody"
+        },
+        "speed": 0
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "cfe2e642-18be-4e8c-bc90-0ba2c243df22",
+        "Flags": 0,
+        "Name": "tank train",
+        "Rotation": "0,0,0.7071068,0.7071068",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "1bf4b3b4-c85d-4f4d-a307-3717478ad694",
+            "BodyGroups": 18446744073709551615,
+            "CreateAttachments": false,
+            "Model": "models/tank train/tank train.vmdl",
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      }
+    ],
+    "__variables": [],
+    "__properties": {
+      "FixedUpdateFrequency": 50,
+      "MaxFixedUpdates": 5,
+      "NetworkFrequency": 30,
+      "NetworkInterpolation": true,
+      "PhysicsSubSteps": 1,
+      "ThreadedAnimation": true,
+      "TimeScale": 1,
+      "UseFixedUpdate": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": true,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": ""
+      }
+    }
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "ResourceVersion": 1,
+  "__references": [
+    "caro.railroad_tanker#28512"
+  ],
+  "__version": 1
+}
