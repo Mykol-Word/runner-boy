@@ -161,12 +161,6 @@
             "component_type": "SkinnedModelRenderer"
           },
           "move_speed": 350,
-          "ragdoll": {
-            "_type": "component",
-            "component_id": "8950c120-8ca8-465a-a29b-20c48f09be2b",
-            "go": "c0ed9a68-0359-478d-9f52-d3ae1584774a",
-            "component_type": "Prop"
-          },
           "rigidbody": {
             "_type": "component",
             "component_id": "554535c6-93c6-4e18-9913-b8af42fc3263",
@@ -222,25 +216,6 @@
               "UseAnimGraph": true
             }
           ]
-        },
-        {
-          "__guid": "c0ed9a68-0359-478d-9f52-d3ae1584774a",
-          "Flags": 0,
-          "Name": "Ragdoll",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.Prop",
-              "__guid": "8950c120-8ca8-465a-a29b-20c48f09be2b",
-              "__enabled": false,
-              "BodyGroups": 341,
-              "Health": 0,
-              "IsStatic": false,
-              "Model": "models/citizen/citizen.vmdl",
-              "StartAsleep": false,
-              "Tint": "1,1,1,1"
-            }
-          ]
         }
       ]
     },
@@ -254,13 +229,23 @@
         {
           "__type": "ObstacleManager",
           "__guid": "eab76ed4-aec7-4e54-935f-d4fef3d500d0",
+          "decor_list": [
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/decor/stop_p.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/decor/post_p.prefab"
+            }
+          ],
           "floor_mover": {
             "_type": "component",
             "component_id": "ff0a9120-d743-4946-b9fb-b340344533cc",
             "go": "a9c7fc85-3713-41a4-ad19-d7f9dcc90d0b",
             "component_type": "FloorMover"
           },
-          "game_speed": 1000,
+          "game_speed": 2000,
           "obstacle_list": [
             {
               "_type": "gameobject",
@@ -279,12 +264,12 @@
             "_type": "gameobject",
             "prefab": "prefabs/sign_p.prefab"
           },
-          "sign_spawn_time_cutoff": 1,
+          "sign_spawn_time_cutoff": 0.5,
           "spawn_delay_max": 2,
           "spawn_delay_min": 0.1,
           "spawn_distance": 8000,
           "spawn_range": 450,
-          "train_spawn_time_cutoff": 1
+          "train_spawn_time_cutoff": 0.5
         }
       ]
     },
@@ -298,13 +283,7 @@
         {
           "__type": "FloorMover",
           "__guid": "ff0a9120-d743-4946-b9fb-b340344533cc",
-          "rigidbody": {
-            "_type": "component",
-            "component_id": "4ee3c971-6c67-4a66-8310-efce87006db9",
-            "go": "a9c7fc85-3713-41a4-ad19-d7f9dcc90d0b",
-            "component_type": "Rigidbody"
-          },
-          "speed": 1000
+          "speed": 0
         },
         {
           "__type": "Sandbox.Rigidbody",
@@ -386,7 +365,7 @@
       "__guid": "f3b9d8dd-8793-486a-977d-3f8db97f39c3",
       "Flags": 0,
       "Name": "Idle_Floor",
-      "Position": "0,0,-1",
+      "Position": "10000,0,-1",
       "Enabled": true,
       "Children": [
         {
@@ -428,6 +407,7 @@
           "__guid": "3e4b11d7-da45-4d27-8667-10444d43bb58",
           "Flags": 0,
           "Name": "Floor_Buffer",
+          "Position": "-374.3242,0,0",
           "Scale": "600,30,0.25",
           "Enabled": true,
           "Components": [
@@ -509,9 +489,16 @@
             "Name": "music",
             "Id": "cec7b654-7bc7-4087-8870-c293cb08cb16"
           },
-          "Volume": 0.03
+          "Volume": 0
         }
       ]
+    },
+    {
+      "__guid": "4f2473b9-736a-487f-a111-729d92d29491",
+      "Flags": 0,
+      "Name": "Object",
+      "Position": "-284.0714,1730.099,1149.414",
+      "Enabled": true
     }
   ],
   "SceneProperties": {

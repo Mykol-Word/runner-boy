@@ -1,0 +1,100 @@
+{
+  "RootObject": {
+    "__guid": "db83d93e-7a6e-40e1-94b1-bfa0728857f2",
+    "Flags": 0,
+    "Name": "stop_p",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Sandbox.Rigidbody",
+        "__guid": "77af1277-4488-422c-898a-bd6a71eb2256",
+        "AngularDamping": 0,
+        "Gravity": false,
+        "LinearDamping": 0,
+        "Locking": {
+          "X": false,
+          "Y": false,
+          "Z": false,
+          "Pitch": false,
+          "Yaw": false,
+          "Roll": false
+        },
+        "MassCenterOverride": "0,0,0",
+        "MassOverride": 0,
+        "MotionEnabled": true,
+        "OverrideMassCenter": false,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      },
+      {
+        "__type": "Obstacle",
+        "__guid": "77781413-a1a4-4087-83e1-a06ab29ab049",
+        "rigidbody": {
+          "_type": "component",
+          "component_id": "77af1277-4488-422c-898a-bd6a71eb2256",
+          "go": "db83d93e-7a6e-40e1-94b1-bfa0728857f2",
+          "component_type": "Rigidbody"
+        },
+        "speed": 0
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "8f8f1d2c-0c02-4017-bc91-f84573b1bf5d",
+        "Flags": 0,
+        "Name": "bus_stop",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "4a6c3ed1-6f62-48c5-9dbc-7c44ed5d388d",
+            "BodyGroups": 18446744073709551615,
+            "CreateAttachments": false,
+            "Model": "models/static/anny/bus_stop.vmdl",
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      }
+    ],
+    "__variables": [],
+    "__properties": {
+      "FixedUpdateFrequency": 50,
+      "MaxFixedUpdates": 5,
+      "NetworkFrequency": 30,
+      "NetworkInterpolation": true,
+      "PhysicsSubSteps": 1,
+      "ThreadedAnimation": true,
+      "TimeScale": 1,
+      "UseFixedUpdate": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": true,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": ""
+      }
+    }
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "ResourceVersion": 1,
+  "__references": [
+    "niclude.bus_stop#30661"
+  ],
+  "__version": 1
+}

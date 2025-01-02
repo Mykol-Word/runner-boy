@@ -3,10 +3,14 @@ using Sandbox;
 
 public sealed class ObstacleManager : Component
 {
-	//Obstacles
+	//Objects
 	[Property]
 	[Category("Objects")]
 	public List<GameObject> obstacle_list;
+
+	[Property]
+	[Category("Objects")]
+	public List<GameObject> decor_list;
 	[Property]
 
 	[Category("Objects")]
@@ -53,29 +57,57 @@ public sealed class ObstacleManager : Component
 	[Description("How fast danger comes at you")]
 	public int game_speed;
 
-	private float time_since_spawn = 0f;
+	private float time_since_obstacle_spawn = 0f;
+
+	private float time_since_decor_spawn = 0f;
 	private float time_since_train = 0f;
 	private float time_since_sign = 0f;
 	private RangedFloat spawn_time_cutoff = new RangedFloat();
 	private RangedFloat spawn_location = new RangedFloat();
+	private int decor_spawn_bounds = 700;
+
+	private List<GameObject> live_objects = new List<GameObject>();
 
 	protected override void OnUpdate()
 	{
 		//Set floor and movement speed
 		floor_mover.speed = game_speed;
 
-		time_since_spawn += Time.Delta; time_since_train += Time.Delta; time_since_sign += Time.Delta;
+		time_since_obstacle_spawn += Time.Delta; time_since_train += Time.Delta; time_since_sign += Time.Delta; time_since_decor_spawn += Time.Delta;
 		
-		if(time_since_spawn > spawn_time_cutoff.GetValue())
+		//Obstacle spawns
+		if(time_since_obstacle_spawn > spawn_time_cutoff.GetValue())
 		{
 			int spawn_index = new Random().Next(0, obstacle_list.Count); // random int [0, # of obstacles]
 			SpawnObject(obstacle_list[spawn_index]);
-			time_since_spawn = 0;
+			time_since_obstacle_spawn = 0;
 		}
+		
+		//Sign spawns
 		if(time_since_sign > sign_spawn_time_cutoff && new Random().Next(1,500) == 1 ) // lazy variation 
 		{
 			time_since_sign = 0f;
 			SpawnObject(sign, false);
+		}
+
+		//decor spawns (10x less frequent)
+		if(time_since_decor_spawn > spawn_time_cutoff.GetValue() * 10)
+		{
+			int spawn_index = new Random().Next(0, decor_list.Count); // random int [0, # of obstacles]
+			SpawnObject(decor_list[spawn_index], false, true);
+			time_since_decor_spawn = 0;
+		}
+	
+		foreach (GameObject g in live_objects)
+		{
+			Obstacle obstacle = g.GetComponent<Obstacle>();
+			if(!obstacle.live)
+			{
+				live_objects.Remove(g);
+				g.Destroy();
+				return;
+			}
+			obstacle.speed = game_speed;
 		}
 	}
 
@@ -90,9 +122,9 @@ public sealed class ObstacleManager : Component
 	}
 
 	//Spawns new GameObject g randomly on the road
-	private void SpawnObject(GameObject g, bool random=true)
+	private void SpawnObject(GameObject g, bool random=true, bool decor=false)
 	{
-		if(g.Name == "Tanker")
+		if(g.Name == "tanker_p")
 		{
 			if(time_since_train < train_spawn_time_cutoff) return;
 			time_since_train = 0f;
@@ -108,10 +140,28 @@ public sealed class ObstacleManager : Component
 			new_gameObject.LocalRotation = new_angle.ToRotation();
 			new_gameObject.WorldPosition = new Vector3(spawn_distance, spawn_location.GetValue(), 0);
 		}
-		else new_gameObject.WorldPosition = new Vector3(spawn_distance, 0, 70);
+		else
+		{
+			if(decor)
+			{
+				int left_or_right = new Random().Next(0,2); //0 = left, 1 = right
+				int y_ofset = left_or_right == 0 ? -decor_spawn_bounds : decor_spawn_bounds;
+				new_gameObject.WorldPosition = new Vector3(spawn_distance, y_ofset, 0);
+				if(left_or_right == 0)
+				{
+					Angles new_angle = new Angles();
+					new_angle.yaw = 180;
+					new_gameObject.LocalRotation = new_angle.ToRotation();
+				}
+			}
+			else new_gameObject.WorldPosition = new Vector3(spawn_distance, 0, 70);
+		}
 
 		//Set new obstacle's speed
 		Obstacle new_obstacle = new_gameObject.GetComponent<Obstacle>();
 		new_obstacle.speed = game_speed;
+
+		//Add object to list of live objects
+		live_objects.Add(new_gameObject);
 	}
 }

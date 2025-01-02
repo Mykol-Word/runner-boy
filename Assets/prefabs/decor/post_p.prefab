@@ -1,0 +1,79 @@
+{
+  "RootObject": {
+    "__guid": "7d4814d8-7a73-4776-99e8-1ddd3ac1b020",
+    "Flags": 0,
+    "Name": "Post",
+    "Position": "1977.374,84.41836,0",
+    "Rotation": "0,0,1,-0.00000004371139",
+    "Scale": "1.3,1.3,1.3",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Sandbox.Rigidbody",
+        "__guid": "81402bd3-6419-4383-9680-4178d64e5166",
+        "AngularDamping": 0,
+        "Gravity": false,
+        "LinearDamping": 0,
+        "Locking": {
+          "X": false,
+          "Y": false,
+          "Z": false,
+          "Pitch": false,
+          "Yaw": false,
+          "Roll": false
+        },
+        "MassCenterOverride": "0,0,0",
+        "MassOverride": 0,
+        "MotionEnabled": true,
+        "OverrideMassCenter": false,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      },
+      {
+        "__type": "Obstacle",
+        "__guid": "9c6447dd-d991-4248-b1a8-23a2ba94b68b",
+        "rigidbody": {
+          "_type": "component",
+          "component_id": "81402bd3-6419-4383-9680-4178d64e5166",
+          "go": "7d4814d8-7a73-4776-99e8-1ddd3ac1b020",
+          "component_type": "Rigidbody"
+        },
+        "speed": 0
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "4ec58e48-0882-4f9a-ad4d-2c85487d38af",
+        "Flags": 0,
+        "Name": "sign_public_road_end",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "2c9981d3-53f3-456f-8575-0af75e5a7281",
+            "BodyGroups": 18446744073709551615,
+            "CreateAttachments": false,
+            "Model": "models/sign_public_road_ends/sign_public_road_end.vmdl",
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "ResourceVersion": 1,
+  "__references": [
+    "fdd.sign_public_road_end#35332"
+  ],
+  "__version": 1
+}

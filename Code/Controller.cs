@@ -33,10 +33,6 @@ public sealed class Controller : Component
 	[Category("Components")]
 	SkinnedModelRenderer model_renderer;
 
-	[Property]
-	[Category("Components")]
-	Prop ragdoll;
-
 	//Private helpers
 	private int left_right_boundaries = 300;
 	private int grounded = 0;

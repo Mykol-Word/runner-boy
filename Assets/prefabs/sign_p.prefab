@@ -3,6 +3,7 @@
     "__guid": "dd66aaa7-ce06-461d-a682-75ba7e80ff1b",
     "Flags": 0,
     "Name": "sign_p",
+    "Position": "0,0,-34.2007",
     "Scale": "2,4,2",
     "Tags": "obstacle",
     "Enabled": true,
@@ -14,9 +15,9 @@
         "Gravity": true,
         "LinearDamping": 0,
         "Locking": {
-          "X": false,
-          "Y": false,
-          "Z": false,
+          "X": true,
+          "Y": true,
+          "Z": true,
           "Pitch": true,
           "Yaw": true,
           "Roll": true
@@ -30,17 +31,8 @@
       },
       {
         "__type": "Sandbox.BoxCollider",
-        "__guid": "ca6afa8e-2e04-4133-8316-52cfd994212c",
-        "Center": "-0.600008,123,-5.999919",
-        "IsTrigger": false,
-        "Scale": "12.49998,4.499992,32",
-        "Static": false,
-        "SurfaceVelocity": "0,0,0"
-      },
-      {
-        "__type": "Sandbox.BoxCollider",
         "__guid": "d27c3326-f193-4dc0-8428-104c9ea1fb52",
-        "Center": "0,0,85.60002",
+        "Center": "0,0,75.6",
         "IsTrigger": false,
         "Scale": "8.899957,253.5002,48.39995",
         "Static": false,
@@ -49,7 +41,7 @@
       {
         "__type": "Sandbox.BoxCollider",
         "__guid": "7e6f735e-205a-482f-87a7-d9204b5670ab",
-        "Center": "0,0,85.8",
+        "Center": "0,0,75.8",
         "IsTrigger": true,
         "Scale": "14.79999,256.3003,57.79998",
         "Static": false,
@@ -58,12 +50,6 @@
       {
         "__type": "Obstacle",
         "__guid": "3c30a0ab-bbd9-49ef-9f1c-edef3c450070",
-        "rigidbody": {
-          "_type": "component",
-          "component_id": "f1aad493-5488-4961-b23c-9fce35f82bbf",
-          "go": "dd66aaa7-ce06-461d-a682-75ba7e80ff1b",
-          "component_type": "Rigidbody"
-        },
         "speed": 0
       }
     ],
@@ -72,6 +58,7 @@
         "__guid": "0d294bb5-ef15-4248-900b-cfa013f7bb67",
         "Flags": 0,
         "Name": "sign_street_kanji01",
+        "Position": "0,0,-15.53102",
         "Enabled": true,
         "Components": [
           {

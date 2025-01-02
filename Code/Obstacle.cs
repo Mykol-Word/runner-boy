@@ -3,17 +3,16 @@ using Sandbox;
 public sealed class Obstacle : Component
 {
 	[Property]
-	public Rigidbody rigidbody;
+	public int speed = 0;
 
 	[Property]
-	public int speed = 0;
+	public bool live = true;
 
 	protected override void OnUpdate()
 	{
-		
-		rigidbody.Velocity = new Vector3(-speed, 0, 0);
+		WorldPosition += new Vector3(-speed * Time.Delta, 0 , 0);
 
 		//destroy if out of bounds
-		if(WorldPosition.x < -500) GameObject.Destroy();
+		if(WorldPosition.x < -500) live = false;
 	}
 }

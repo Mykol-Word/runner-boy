@@ -14,9 +14,9 @@
         "Gravity": true,
         "LinearDamping": 0,
         "Locking": {
-          "X": false,
-          "Y": false,
-          "Z": false,
+          "X": true,
+          "Y": true,
+          "Z": true,
           "Pitch": true,
           "Yaw": true,
           "Roll": true
@@ -49,12 +49,7 @@
       {
         "__type": "Obstacle",
         "__guid": "9d3e4d96-3ae9-408b-9c8d-a2826009baa0",
-        "rigidbody": {
-          "_type": "component",
-          "component_id": "a23ca640-d922-4e33-8895-3c1da02072ee",
-          "go": "b6e006bb-59eb-4fb4-a1f4-4d4d6cbc7870",
-          "component_type": "Rigidbody"
-        },
+        "live": true,
         "speed": 0
       }
     ],

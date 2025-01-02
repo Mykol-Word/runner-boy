@@ -31,30 +31,25 @@
       {
         "__type": "Sandbox.BoxCollider",
         "__guid": "43c06296-ee4e-49d7-a2f2-c52987957d85",
-        "Center": "0,0,7.89992",
+        "Center": "0,0,16.79993",
         "IsTrigger": false,
-        "Scale": "9.599943,43.89999,15.79981",
+        "Scale": "19.2,87.8,31.6",
         "Static": false,
         "SurfaceVelocity": "0,0,0"
       },
       {
         "__type": "Sandbox.BoxCollider",
         "__guid": "9b78ee17-5906-447b-8180-76fdaeb9134f",
-        "Center": "-3.30001,-0.02999127,8.199947",
+        "Center": "-4.900009,-0.02999127,15.49995",
         "IsTrigger": true,
-        "Scale": "7.39997,38.60032,14.19995",
+        "Scale": "14.8,78.99997,28.4",
         "Static": false,
         "SurfaceVelocity": "0,0,0"
       },
       {
         "__type": "Obstacle",
         "__guid": "9bc5d878-7879-4978-9dd5-85547912f8f2",
-        "rigidbody": {
-          "_type": "component",
-          "component_id": "7b00d37c-f78f-4428-bdd1-81cb143d9f42",
-          "go": "3253091d-02a3-49f9-8d0e-54f2317d96dd",
-          "component_type": "Rigidbody"
-        },
+        "live": true,
         "speed": 0
       }
     ],
