@@ -57,6 +57,11 @@ public sealed class ObstacleManager : Component
 	[Description("How fast danger comes at you")]
 	public int game_speed;
 
+	[Property]
+	[Category("Settings")]
+	[Description("Keep making obstacles?")]
+	public bool make_obstacles = true;
+
 	private float time_since_obstacle_spawn = 0f;
 
 	private float time_since_decor_spawn = 0f;
@@ -72,6 +77,21 @@ public sealed class ObstacleManager : Component
 	{
 		//Set floor and movement speed
 		floor_mover.speed = game_speed;
+
+		//Set obstacle speed and destroy if needed
+		foreach (GameObject g in live_objects)
+		{
+			Obstacle obstacle = g.GetComponent<Obstacle>();
+			if(!obstacle.live)
+			{
+				live_objects.Remove(g);
+				g.Destroy();
+				return;
+			}
+			obstacle.speed = game_speed;
+		}
+
+		if(!make_obstacles) return;
 
 		time_since_obstacle_spawn += Time.Delta; time_since_train += Time.Delta; time_since_sign += Time.Delta; time_since_decor_spawn += Time.Delta;
 		
@@ -96,18 +116,6 @@ public sealed class ObstacleManager : Component
 			int spawn_index = new Random().Next(0, decor_list.Count); // random int [0, # of obstacles]
 			SpawnObject(decor_list[spawn_index], false, true);
 			time_since_decor_spawn = 0;
-		}
-	
-		foreach (GameObject g in live_objects)
-		{
-			Obstacle obstacle = g.GetComponent<Obstacle>();
-			if(!obstacle.live)
-			{
-				live_objects.Remove(g);
-				g.Destroy();
-				return;
-			}
-			obstacle.speed = game_speed;
 		}
 	}
 

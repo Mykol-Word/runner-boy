@@ -1,0 +1,20 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@namespace Sandbox
+
+<root>
+	<div class="text">@score_string: @score</div>
+</root>
+
+@code
+{
+
+	[Property, TextArea] public string score_string { get; set; } = "Hello World!";
+	[Property] public int score = 0;
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( score_string, score );
+}

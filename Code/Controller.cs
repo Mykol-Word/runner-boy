@@ -33,12 +33,15 @@ public sealed class Controller : Component
 	[Category("Components")]
 	SkinnedModelRenderer model_renderer;
 
+	[Property]
+	[Category("Parameters")]
+	public bool game_over = false;
+
 	//Private helpers
 	private int left_right_boundaries = 300;
 	private int grounded = 0;
 	private int grounded_threshold = 10;
 	private Vector3 facing_vector = Vector3.Zero;
-	private bool game_over = false;
 
 	protected override void OnStart()
 	{

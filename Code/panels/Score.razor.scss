@@ -1,0 +1,19 @@
+Score
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	font-weight: bold;
+	border-radius: 20px;
+
+	.text
+	{
+		font-size: 50px;
+		font-family: Poppins;
+		color: #fff;
+		justify-content: start;
+		margin: 20px;
+	}
+}
